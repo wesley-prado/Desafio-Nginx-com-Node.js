@@ -27,4 +27,4 @@ docker-compose up -d
 
 ## Licença
 
-Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE]() para mais detalhes.
+Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/wesley-prado/Desafio-Nginx-com-Node.js/blob/main/LICENSE) para mais detalhes.
