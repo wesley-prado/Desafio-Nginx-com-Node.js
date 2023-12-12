@@ -12,8 +12,7 @@ class List{
             <ol>
         `;
 
-        const list = this.people.map((person) => `<li>${person.name}</li>`);
-
+        const list = this.people.sort((a, b) => a.id - b.id).map((person) => `<li>${person.name}</li>`);
         html += list.join('') + '</ol>';
 
         return html;
