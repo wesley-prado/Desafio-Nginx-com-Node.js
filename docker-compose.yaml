@@ -2,7 +2,7 @@ version: "3"
 
 services:
   db:
-    image: mysql:latest
+    image: mysql:8.2
     command: --innodb-use-native-aio=0
     container_name: db
     restart: always
@@ -17,11 +17,12 @@ services:
 
   app:
     build:
-      context: ./node
+      context: node
       dockerfile: Dockerfile.prod
     image: wesleypradodev/app:prod
     volumes:
       - ./node:/usr/src/app
+      - /usr/src/app/node_modules
     container_name: app
     entrypoint: [
         "/bin/sh",
@@ -34,7 +35,7 @@ services:
     
   nginx:
     build: 
-      context: ./nginx
+      context: nginx
       dockerfile: Dockerfile.prod
     image: wesleypradodev/nginx:prod
     container_name: nginx
