@@ -45,7 +45,7 @@ function insertPeopleRecord(name) {
 
 // Rota para listar todas as pessoas
 app.get("/", (req, res) => {
-  connection.query('SELECT * FROM people', function(err, results){
+  connection.query('SELECT id, name FROM people', function(err, results){
     if(err){
       console.error('Error: ', err)
     } else {
